@@ -7,7 +7,8 @@
   --default-section-space: 3rem;
   --primary-color: rgba(32,14,50,1);
   --subtle-color: rgba(107,114,128,1);
-  --link-color: #1a73e8;
+  --link-color: #6366f1;
+  --link-color-hover: #3329f1;
   --bg-color: rgba(249,249,253,1);
 }
 
@@ -19,7 +20,7 @@ html[data-theme='light'] {
     --default-section-space: 3rem;
     --primary-color: rgba(32,14,50,1);
     --subtle-color: rgba(107,114,128,1);
-    --link-color: #1a73e8;
+    --link-color: #6366f1;
     --bg-color: rgba(249,249,253,1);
 }
 
@@ -31,7 +32,8 @@ html[data-theme="dark"] {
     --default-section-space: 3rem;
     --primary-color: #c7d1db;
     --subtle-color: #8696a7;
-    --link-color: #1a73e8;
+    --link-color: #75b6c0;
+    --link-color-hover: #479ba1;
     --bg-color: #101214;
 }
 
@@ -58,8 +60,12 @@ h2 {
 
 a {
     text-decoration: none;
-    color:var(--link-color);
+    color: var(--link-color);
     cursor: pointer;
+}
+
+a:hover {
+    color: var(--link-color-hover);
 }
 
 header {
