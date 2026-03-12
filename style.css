@@ -124,21 +124,35 @@ main {
 }
 
 .section {
-    margin-bottom: calc(var(--default-section-space) - 1rem);
+    margin-bottom: calc(var(--default-section-space) - 1.5rem);
 }
 
 .section .position {
-    margin-bottom: calc(var(--default-section-space) - 1rem);
+    margin-bottom: calc(var(--default-section-space) - 2rem);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 
 .section .title {
     font-weight: 700;
-    margin-bottom: calc(var(--default-section-space) - 2.5rem);
+    margin-bottom: 0.25rem;
+    flex: 1;
 }
 
 .section .period {
     color: var(--subtle-color);
-    margin-bottom: calc(var(--default-section-space) - 2.5rem);
+    margin-bottom: 0.25rem;
+    text-align: right;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.section .position p, 
+.section .position ul {
+    flex-basis: 100%;
+    margin-top: 0;
 }
 
 .primary-text {
@@ -226,7 +240,52 @@ main {
 
 
 @media print {
+    @page {
+        margin: 0;
+    }
+
+    body {
+        margin: 1cm;
+        width: 100%;
+        max-width: 100%;
+    }
+
     #toggle {
         display: none;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+    }
+
+    .left {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .right {
+        flex-basis: 30%;
+        min-width: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    a{
+        color: black;
+    }
+
+    .right a[href*="linkedin.com"]::after,
+    .right a[href*="github.com"]::after {
+        content: attr(href);
+        font-size: 0.63rem;
+        display: block;
+        color: var(--subtle-color);
+        margin-top: 2px;
+    }
+
+    .section .period {
+        font-size: 0.85rem;
     }
 }
